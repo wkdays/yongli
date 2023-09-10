@@ -1,6 +1,6 @@
 site_name: 智能藏
 repo_url: https://github.com/squarewang007/yongli #（请修改为你自己的仓库地址）
-edit_uri: edit/main/docs/upbu
+edit_url: edit/main/docs/
 
 theme:
     name: material
