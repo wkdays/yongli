@@ -1,6 +1,6 @@
-site_name: upbu
+site_name: 智能藏
 repo_url: https://github.com/squarewang007/yongli #（请修改为你自己的仓库地址）
-edit_uri: edit/main/docs/
+edit_uri: edit/main/docs/upbu
 
 theme:
     name: material
@@ -27,7 +27,7 @@ theme:
 # Extensions
 markdown_extensions:
   - footnotes
-  # - attr_list
+  - attr_list
   # - pymdownx.arithmatex
   # - pymdownx.superfences
   # - pymdownx.details
@@ -42,4 +42,4 @@ markdown_extensions:
 
 plugins:
   - search
-  - roamlinks 
+  - roamlinks
