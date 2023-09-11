@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1、AI/2、主要开源应用.md",
+                "file": "1、AI/1、人工智能发展.md",
                 "mode": "source",
                 "source": true
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1、AI/2、主要开源应用.md",
+                "file": "1、AI/1、人工智能发展.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1、AI/2、主要开源应用.md",
+                "file": "1、AI/1、人工智能发展.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -114,7 +114,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1、AI/2、主要开源应用.md"
+                "file": "1、AI/1、人工智能发展.md"
               }
             }
           }
@@ -135,10 +135,10 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "5306d2367d1478d6",
+  "active": "58fc701b66baeef4",
   "lastOpenFiles": [
-    "1、AI/1、人工智能发展.md",
     "1、AI/2、主要开源应用.md",
+    "1、AI/1、人工智能发展.md",
     "index.md",
     "2、机器人",
     "1、AI",
