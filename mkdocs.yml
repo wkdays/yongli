@@ -1,5 +1,5 @@
 # mkdocs.yml
-site_name: 嬉戏实验室
+site_name: AI实验室
 repo_url: https://github.com/squarewang007/yongli #（请修改为你自己的仓库地址）
 edit_url: edit/main/docs/
 nav: # 导航结构
