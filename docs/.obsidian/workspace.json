@@ -18,6 +18,18 @@
                 "source": true
               }
             }
+          },
+          {
+            "id": "b0c1eb3ddf7f3ef7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "AI/人工智能的前世今生.md",
+                "mode": "source",
+                "source": true
+              }
+            }
           }
         ]
       }
@@ -137,12 +149,15 @@
   },
   "active": "55688298d82b1efd",
   "lastOpenFiles": [
+    "AI/人工智能的前世今生.md",
+    "index.md",
+    "机器人",
+    "AI",
     "文章1.md",
     "规模经济.md",
     "民族问题.md",
     "中等收入陷阱.md",
     "T型与Π型知识体系.md",
-    "index.md",
     "知行合一.md",
     "因果律与非线性时间.md",
     "预言与预知梦.md",
