@@ -1,6 +1,31 @@
 site_name: 有趣的知识-人工智能
-repo_url: https://github.com/wkdays/yongli
-edit_url: edit/main/docs/
+#repo_url: https://github.com/wkdays/yongli
+#edit_url: edit/main/docs/
+
+docs_dir: content
+
+nav:
+  - 'Home': index.md
 
 theme:
-    name: material
+  name: material
+  custom_dir: mkdocs-overrides
+  features:
+    - instant
+  palette:
+    primary: white
+    accent: indigo
+
+extra_css:
+  - mkdocs.css
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+

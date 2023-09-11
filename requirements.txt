@@ -1,5 +1,6 @@
 mkdocs
 mkdocs-material
+mkdocs-roamlinks-plugin
 
 # 以下是插件，按需要安装
 mkdocs-mermaid2-plugin
