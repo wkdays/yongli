@@ -10,7 +10,7 @@
 6. 下载 Obsidian 软件，在设置里，设置库（Vault）的位置为git clone到本地的docs文件夹，这个文件夹就是网站首页的目录，也是obsidian的库文件目录。
 7. 还要解决一个问题，安装obsidian git插件，这样可以自动同步到git上。然后从git上同步到vercel网站上。安装后用ssh-key来链接git，否则每次都要输入密码或者链接不上。国内的网络似乎也是个问题。
 8. 测试ssh git 的链接https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection
-9. 
+9. 这都是折腾为了免费。
 10. 每次更新后推到 GitHub，Vercel 就会自动拉取更新，并部署网站。
 
 ## 开发者区域
