@@ -1,3 +1,4 @@
+# Copied from https://github.com/squidfunk/mkdocs-material/blob/b8cf7d7/requirements.txt
 mkdocs
 mkdocs-material
 mkdocs-roamlinks-plugin
@@ -14,3 +15,7 @@ jieba
 # pip install click-man
 # click-man --target path/to/man/pages mkdocs
 
+Pygments>=2.4
+markdown>=3.2
+pymdown-extensions>=7.0
+mkdocs-material-extensions>=1.0b1
