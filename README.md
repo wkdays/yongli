@@ -7,9 +7,11 @@
 2. 在 [**Vercel**](https://vercel.com/) 部署，新建项目new project，框架选择 `other`，起个网站名字如：upbu，其他不用选，默认完成。（如果还没注册 Vercel 账号，可以直接用 GitHub 账户创建一个）
 3. 此刻你有个网站了，比如[http://upbu.vercel.com](https://upbu.vercel.app/)
 4. <img width="1130" alt="image" src="https://github.com/squarewang007/yongli/assets/28798102/dccf01ad-62d1-4c8c-98b7-09f62402c06d">
-6. 下载 Obsidian 软件，把库（Vault）的位置和git 文件夹同步，方式有好几种，我用macbook下，git clone 下来的.git 移动到~/Library/Mobile\Documents/iCloud~md~obsidian/Documents。
-7. 还要解决一个问题，安装obsidian git插件，这样可以自动同步到git上。然后从git上同步到vercel网站上。
-8. 每次更新后推到 GitHub，Vercel 就会自动拉取更新，并部署网站。
+6. 下载 Obsidian 软件，在设置里，设置库（Vault）的位置为git clone到本地的docs文件夹，这个文件夹就是网站首页的目录，也是obsidian的库文件目录。
+7. 还要解决一个问题，安装obsidian git插件，这样可以自动同步到git上。然后从git上同步到vercel网站上。安装后用ssh-key来链接git，否则每次都要输入密码或者链接不上。国内的网络似乎也是个问题。
+8. 测试ssh git 的链接https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection
+9. 
+10. 每次更新后推到 GitHub，Vercel 就会自动拉取更新，并部署网站。
 
 ## 开发者区域
 
