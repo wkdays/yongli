@@ -20,15 +20,16 @@
 
 # Project information
 site_name: Material for MkDocs
-site_url: https://squidfunk.github.io/mkdocs-material/
-site_author: Martin Donath
+site_url: https://yongli.vercel.app
+site_author: yongli
 site_description: >-
   Write your documentation in Markdown and create a professional static site in
   minutes – searchable, customizable, in 60+ languages, for all devices
 
 # Repository
-repo_name: squidfunk/mkdocs-material
-repo_url: https://github.com/squidfunk/mkdocs-material
+repo_name: squarewang007/yongli
+repo_url: https://github.com/squarewang007/yongli
+# edit_url: edit/main/docs/
 
 # Copyright
 copyright: Copyright &copy; 2016 - 2023 Martin Donath
