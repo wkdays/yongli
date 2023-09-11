@@ -1,6 +1,6 @@
 site_name: 有趣的知识-人工智能
 repo_url: https://github.com/wkdays/yongli
-#edit_url: edit/main/docs/
+edit_url: edit/main/content
 
 docs_dir: content
 
