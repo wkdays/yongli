@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": true
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md.md",
+                "file": "index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md.md",
+                "file": "index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md.md"
+                "file": "index.md"
               }
             }
           }
@@ -150,10 +150,12 @@
   },
   "active": "ebd72bcdb0dd9b93",
   "lastOpenFiles": [
+    "material/material",
+    "material",
     "1、AI/2、主要开源应用.md",
-    "1、AI/1、人工智能发展.md",
     "index.md.md",
     "index.md",
+    "1、AI/1、人工智能发展.md",
     "2、机器人",
     "1、AI",
     "文章1.md",

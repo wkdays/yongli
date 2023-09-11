@@ -3,7 +3,7 @@ site_name: AI实验室
 repo_url: https://github.com/squarewang007/yongli #（请修改为你自己的仓库地址）
 edit_url: edit/main/docs/
 nav: # 导航结构
-    - Home: index.md # [定制主页](https://github.com/squidfunk/mkdocs-material/issues/1996)
+    - Home: index.md
     - 儿童识字:
         - '2020-06-24-自制儿童启蒙集中识字语料库与分级字表.md'
         - '2020-06-24-自制儿童启蒙集中识字分级字表.md'
