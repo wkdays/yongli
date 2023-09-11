@@ -8,24 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "55688298d82b1efd",
+            "id": "58fc701b66baeef4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
-                "mode": "source",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "b0c1eb3ddf7f3ef7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "AI/人工智能的前世今生.md",
+                "file": "AI/1、人工智能发展.md",
                 "mode": "source",
                 "source": true
               }
@@ -81,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 165.00000190734863
+    "width": 218.5
   },
   "right": {
     "id": "dce3a2c7ec15633d",
@@ -97,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
+                "file": "AI/1、人工智能发展.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md",
+                "file": "AI/1、人工智能发展.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +114,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md"
+                "file": "AI/1、人工智能发展.md"
               }
             }
           }
@@ -147,9 +135,10 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "55688298d82b1efd",
+  "active": "58fc701b66baeef4",
   "lastOpenFiles": [
-    "AI/人工智能的前世今生.md",
+    "AI/2、主要开源应用.md",
+    "AI/1、人工智能发展.md",
     "index.md",
     "机器人",
     "AI",
