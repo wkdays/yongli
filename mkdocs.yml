@@ -1,64 +1,89 @@
-site_name: 有趣的知识-人工智能
+# mkdocs.yml
+site_name: 嬉戏实验室
 repo_url: https://github.com/squarewang007/yongli #（请修改为你自己的仓库地址）
 edit_url: edit/main/docs/
-
+nav: # 导航结构
+    - Home: index.md # [定制主页](https://github.com/squidfunk/mkdocs-material/issues/1996)
+    - 儿童识字:
+        - '2020-06-24-自制儿童启蒙集中识字语料库与分级字表.md'
+        - '2020-06-24-自制儿童启蒙集中识字分级字表.md'
+    - 老编辑的效率工具:
+        - '2018-11-7-奇技淫巧志.md'
+        - '两种markdown文件解析方法': '2021-02-04-两种markdown文件解析方法.ipynb' # 原本只支持markdown文件，其他文件需要插件支持，同时可能需要制定标题
+    - About: about.md
 theme:
-    name: material
-    palette:
-
-    # Light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: blue
-      accent: indigo
-      toggle:
-        icon: material/toggle-switch-off-outline
-        name: Switch to dark mode
-
-    # Dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: blue
-      accent: blue
-      toggle:
-        icon: material/toggle-switch
-        name: Switch to light mode
-  icon:
-    admonition:
-      note: octicons/tag-16
-      abstract: octicons/checklist-16
-      info: octicons/info-16
-      tip: octicons/squirrel-16
-      success: octicons/check-16
-      question: octicons/question-16
-      warning: octicons/alert-16
-      failure: octicons/x-circle-16
-      danger: octicons/zap-16
-      bug: octicons/bug-16
-      example: octicons/beaker-16
-      quote: octicons/quote-16
-
-# Extensions
+    name: material # 指定mkdocs-material模板
+    favicon: img/favicon.ico
+    logo: img/logo.png
+    palette: # 更改配色
+        primary: blue grey # 主色
+        accent: pink # 强调色
+    features:
+        - navigation.instant
+        - navigation.tabs # 栏头加标签（一级导航）
+        - navigation.tabs.sticky # 固定（浏览时不收起）标签
+    language: zh
+    custom_dir: overrides # 指定模板文件夹，放自定的覆盖模板
 markdown_extensions:
-  - footnotes
-  - attr_list
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.superfences
-  # - pymdownx.arithmatex
-  - pymdownx.superfences
-  - pymdownx.details
-  # - pymdownx.magiclink
-  # - pymdownx.tasklist:
-  #     custom_checkbox: true
-#  - pymdownx.emoji:
-#      emoji_generator: !!python/name:pymdownx.emoji.to_svg
-  - admonition
-  - toc:
-      permalink: true
-
+    - meta # 支持markdown博客文件头的元数据，比如标题
+    - toc:
+        permalink: "#"
+        baselevel: 1
+        separator: "_"
+    - footnotes # 支持脚注
+    - admonition  # 支持提示块
+    - pymdownx.details  # 提示块可折叠
+    - attr_list
+    - pymdownx.inlinehilite # 支持行内语法高亮
+    # - pymdownx.highlight: # 支持代码块语法高亮，！！！跟mermaid冲突
+    #     linenums: true # 显示行号
+    - pymdownx.superfences: # 可在列表等处嵌入块
+        # make exceptions to highlighting of code:
+        custom_fences:
+            - name: mermaid
+              class: mermaid
+              format: !!python/name:mermaid2.fence_mermaid
 plugins:
-  - search
-  - roamlinks
+    - mknotebooks:
+        enable_default_jupyter_cell_styling: false
+        enable_default_pandas_dataframe_styling: false
+        # write_markdown: true
+    - search: # 搜索
+        lang:
+            - en
+            - ja # 日文，也勉强支持中文
+        separator: '[\s\-\.]+' # 分词分隔符
+        # prebuild_index: true # 预制索引，不成功
+    - mermaid2:
+        arguments:
+            securityLevel: 'loose'
+    - macros:
+        # 替换默认的jinja宏标志{{}}，否则类似的地方可能报错
+        # 或用raw标签包裹
+        # [[% raw %]]
+        j2_block_start_string: '[[%'
+        j2_block_end_string: '%]]'
+        j2_variable_start_string: '[['
+        j2_variable_end_string: ']]'
+        # [[% endraw %]]
+    # - redirects: # 重定向，改动文件名时使用
+    #     redirect_maps:
+    #         path/to/old/file.md: path/to/new/file.md
+# google_analytics: # 谷歌分析
+#   - XX-XXXXXXXXX-X
+#   - auto
+gtag:
+  - G-XXXXXXXXXX
+
+extra:
+    social: # 社交账号
+        - icon: fontawesome/brands/github
+          link: https://github.com/squarewang007
+        #   name: Fusyong on Github
+        - icon: fontawesome/brands/facebook
+          link: https://www.facebook.com/squarewang
+        #   name: Fusyong on Facebook
+        - icon: fontawesome/brands/twitter
+          link: https://twitter.com/squarewang
+        #   name: Fusyong on Twitter
+    # disqus: XXXXXXXX # disqus评论插件

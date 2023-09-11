@@ -18,8 +18,21 @@
                 "source": true
               }
             }
+          },
+          {
+            "id": "ebd72bcdb0dd9b93",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "index.md.md",
+                "mode": "source",
+                "source": true
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1、AI/1、人工智能发展.md",
+                "file": "index.md.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1、AI/1、人工智能发展.md",
+                "file": "index.md.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -114,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1、AI/1、人工智能发展.md"
+                "file": "index.md.md"
               }
             }
           }
@@ -135,10 +148,11 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "58fc701b66baeef4",
+  "active": "5306d2367d1478d6",
   "lastOpenFiles": [
-    "1、AI/2、主要开源应用.md",
     "1、AI/1、人工智能发展.md",
+    "index.md.md",
+    "1、AI/2、主要开源应用.md",
     "index.md",
     "2、机器人",
     "1、AI",
