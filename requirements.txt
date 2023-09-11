@@ -3,19 +3,19 @@ mkdocs
 mkdocs-material
 mkdocs-roamlinks-plugin
 
-# 以下是插件，按需要安装
-mkdocs-mermaid2-plugin
-mknotebooks
-mkdocs-macros-plugin
-mkdocs-git-revision-date-plugin
-
-# pip install mkdocs-redirects
-
-jieba
-# pip install click-man
-# click-man --target path/to/man/pages mkdocs
-
 Pygments>=2.4
 markdown>=3.2
 pymdown-extensions>=7.0
 mkdocs-material-extensions>=1.0b1
+# # 以下是插件，按需要安装
+# mkdocs-mermaid2-plugin
+# mknotebooks
+# mkdocs-macros-plugin
+# mkdocs-git-revision-date-plugin
+
+# # pip install mkdocs-redirects
+
+# jieba
+# # pip install click-man
+# # click-man --target path/to/man/pages mkdocs
+
