@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Certificates — Yongli</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: #f6f5f0;
+      color: #1a1a18;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 40px 40px 32px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      font-size: 13px;
+      color: #888780;
+      margin-bottom: 16px;
+    }
+
+    .breadcrumb a {
+      color: #888780;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover { color: #1a1a18; }
+
+    header h1 {
+      font-size: 26px;
+      font-weight: 500;
+      letter-spacing: -0.3px;
+    }
+
+    header p {
+      margin-top: 8px;
+      font-size: 15px;
+      color: #888780;
+      line-height: 1.6;
+    }
+
+    .divider {
+      max-width: 900px;
+      margin: 0 auto;
+      border: none;
+      border-top: 0.5px solid #d3d1c7;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 36px 40px 80px;
+    }
+
+    /* Summary cards */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 10px;
+      margin-bottom: 36px;
+    }
+
+    .stat-card {
+      background: #eeede8;
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+
+    .stat-card .label {
+      font-size: 11px;
+      color: #888780;
+      margin-bottom: 4px;
+    }
+
+    .stat-card .value {
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    /* Section label */
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #888780;
+      margin-bottom: 16px;
+    }
+
+    /* Cert overview cards */
+    .cert-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 10px;
+      margin-bottom: 36px;
+    }
+
+    .cert-card {
+      background: #fff;
+      border: 0.5px solid #d3d1c7;
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 500;
+      padding: 3px 9px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .cert-card h3 {
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    .cert-meta {
+      display: flex;
+      gap: 10px;
+      font-size: 11px;
+      color: #888780;
+    }
+
+    /* Phase timeline */
+    .phase {
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      border: 0.5px solid #d3d1c7;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .phase-label {
+      padding: 18px 12px;
+      font-size: 12px;
+      font-weight: 500;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      line-height: 1.4;
+      gap: 2px;
+    }
+
+    .phase-body {
+      background: #fff;
+      border-left: 0.5px solid #d3d1c7;
+      padding: 18px 20px;
+    }
+
+    .phase-body h3 {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .phase-body .desc {
+      font-size: 12px;
+      color: #5f5e5a;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .progress-bar {
+      height: 6px;
+      border-radius: 3px;
+      margin-bottom: 8px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .link-btn {
+      font-size: 12px;
+      padding: 5px 12px;
+      border-radius: 7px;
+      border: 0.5px solid #d3d1c7;
+      background: #f6f5f0;
+      color: #1a1a18;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: background 0.12s;
+    }
+
+    .link-btn:hover { background: #eeede8; }
+
+    .link-btn svg {
+      width: 11px;
+      height: 11px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    /* Tip box */
+    .tip {
+      background: #fff;
+      border: 0.5px solid #d3d1c7;
+      border-radius: 12px;
+      padding: 18px 22px;
+      font-size: 13px;
+      line-height: 1.8;
+      color: #5f5e5a;
+      margin-top: 8px;
+    }
+
+    .tip strong {
+      color: #1a1a18;
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px;
+      font-size: 12px;
+      color: #b4b2a9;
+    }
+
+    @media (max-width: 600px) {
+      header, main { padding-left: 20px; padding-right: 20px; }
+      .phase { grid-template-columns: 80px 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <p class="breadcrumb"><a href="./">← Yongli</a> / AI Certificates</p>
+  <h1>AI Certificates</h1>
+  <p>12-week plan to earn 5 AI certifications — from zero to deployable AI engineering.</p>
+</header>
+<hr class="divider">
+
+<main>
+
+  <!-- Summary -->
+  <div class="summary-grid">
+    <div class="stat-card">
+      <p class="label">Certificates</p>
+      <p class="value">5</p>
+    </div>
+    <div class="stat-card">
+      <p class="label">Timeline</p>
+      <p class="value">12 wks</p>
+    </div>
+    <div class="stat-card">
+      <p class="label">Total cost</p>
+      <p class="value">~$541</p>
+    </div>
+    <div class="stat-card">
+      <p class="label">Hours / week</p>
+      <p class="value">20+</p>
+    </div>
+    <div class="stat-card">
+      <p class="label">Level</p>
+      <p class="value">Beginner</p>
+    </div>
+  </div>
+
+  <!-- Cert overview -->
+  <p class="section-label">The 5 certificates</p>
+  <div class="cert-row">
+    <div class="cert-card">
+      <span class="badge" style="background:#EAF3DE;color:#3B6D11;">Phase 1 · Week 1</span>
+      <h3>Google AI Essentials</h3>
+      <div class="cert-meta"><span>⏱ 10 hrs</span><span>💵 $49</span></div>
+    </div>
+    <div class="cert-card">
+      <span class="badge" style="background:#EAF3DE;color:#3B6D11;">Phase 2 · Week 2–3</span>
+      <h3>GitHub Foundations</h3>
+      <div class="cert-meta"><span>⏱ 25 hrs</span><span>💵 $99</span></div>
+    </div>
+    <div class="cert-card">
+      <span class="badge" style="background:#E6F1FB;color:#185FA5;">Phase 3 · Week 4–6</span>
+      <h3>AWS AI Practitioner</h3>
+      <div class="cert-meta"><span>⏱ 50 hrs</span><span>💵 $100</span></div>
+    </div>
+    <div class="cert-card">
+      <span class="badge" style="background:#EEEDFE;color:#3C3489;">Phase 4 · Week 7–9</span>
+      <h3>Claude Certified Architect</h3>
+      <div class="cert-meta"><span>⏱ 50 hrs</span><span>💵 $99</span></div>
+    </div>
+    <div class="cert-card">
+      <span class="badge" style="background:#FAECE7;color:#993C1D;">Phase 5 · Week 10–16</span>
+      <h3>IBM Generative AI Engineering</h3>
+      <div class="cert-meta"><span>⏱ 144 hrs</span><span>💵 ~$234</span></div>
+    </div>
+  </div>
+
+  <!-- Timeline -->
+  <p class="section-label">Week-by-week plan &amp; resources</p>
+
+  <div class="phase">
+    <div class="phase-label" style="background:#EAF3DE;color:#3B6D11;">Week 1<br>Google AI</div>
+    <div class="phase-body">
+      <h3>Google AI Essentials — build AI intuition from zero</h3>
+      <div class="progress-bar" style="background:#97C459;width:100%;"></div>
+      <p class="desc">5 modules: AI intro · AI tools · Prompt engineering · Responsible AI · Staying current. No tech background needed. Most learners finish in one week and take the exam immediately.</p>
+      <div class="links">
+        <a class="link-btn" href="https://grow.google/ai-essentials/" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Official course
+        </a>
+        <a class="link-btn" href="https://www.coursera.org/learn/google-ai-essentials" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Enroll on Coursera ($49)
+        </a>
+        <a class="link-btn" href="https://www.skills.google/paths/2336" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Google Skills page
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-label" style="background:#EAF3DE;color:#3B6D11;">Week 2–3<br>GitHub</div>
+    <div class="phase-body">
+      <h3>GitHub Foundations (GH-900) — version control &amp; dev workflow</h3>
+      <div class="progress-bar" style="background:#97C459;width:100%;"></div>
+      <p class="desc">Git basics · repository management · branching &amp; merging · open-source contribution · Markdown. ~3 hrs/day for 2 weeks. Proctored via Pearson VUE (online). Students get exam fee waived via GitHub Education.</p>
+      <div class="links">
+        <a class="link-btn" href="https://resources.github.com/learn/certifications/" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          GitHub Certifications
+        </a>
+        <a class="link-btn" href="https://learn.microsoft.com/en-us/collections/o1njfe825p602p" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Microsoft Learn study path (free)
+        </a>
+        <a class="link-btn" href="https://education.github.com/experiences/foundations_certificate" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Student free access
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-label" style="background:#E6F1FB;color:#185FA5;">Week 4–6<br>AWS</div>
+    <div class="phase-body">
+      <h3>AWS Certified AI Practitioner (AIF-C01) — cloud AI concepts</h3>
+      <div class="progress-bar" style="background:#378ADD;width:100%;"></div>
+      <p class="desc">AI/ML/GenAI concepts · AWS AI service ecosystem · responsible AI · security. 65 questions · 90 min · passing score 700/1000. Passing earns a 50% discount voucher for your next AWS exam.</p>
+      <div class="links">
+        <a class="link-btn" href="https://aws.amazon.com/certification/certified-ai-practitioner/" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          AWS exam page
+        </a>
+        <a class="link-btn" href="https://explore.skillbuilder.aws/learn/courses/19457" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          AWS Skill Builder (free course)
+        </a>
+        <a class="link-btn" href="https://digitalcloud.training/aws-certified-ai-practitioner/" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Practice exams
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-label" style="background:#EEEDFE;color:#3C3489;">Week 7–9<br>Claude CCA-F</div>
+    <div class="phase-body">
+      <h3>Claude Certified Architect Foundations — Anthropic's brand-new cert (March 2026)</h3>
+      <div class="progress-bar" style="background:#7F77DD;width:100%;"></div>
+      <p class="desc">Claude API · Agent SDK · Claude Code · MCP protocol · agentic architecture. 120 min · 720/1000 to pass. Anthropic Academy provides 13 free prep courses on Skilljar.</p>
+      <div class="links">
+        <a class="link-btn" href="https://anthropic.com/academy" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Anthropic Academy (13 free courses)
+        </a>
+        <a class="link-btn" href="https://open-exam-prep.com/blog/cca-f-claude-certified-architect-foundations-guide-2026" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Free CCA-F study guide
+        </a>
+        <a class="link-btn" href="https://www.udemy.com/course/certified-claude-architect-masterclass-2026/" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Udemy prep course
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-label" style="background:#FAECE7;color:#993C1D;">Week 10–16<br>IBM</div>
+    <div class="phase-body">
+      <h3>IBM Generative AI Engineering — most intensive, engineer-level</h3>
+      <div class="progress-bar" style="background:#D85A30;width:100%;"></div>
+      <p class="desc">16 courses · Python · LangChain · HuggingFace · RAG · Transformers · fine-tuning. Final deliverable: a deployable real-world project. Rated 4.7/5 from 3,600+ reviews. ~$39/month on Coursera. At 20 hrs/week, completable in ~7 weeks.</p>
+      <div class="links">
+        <a class="link-btn" href="https://www.coursera.org/professional-certificates/ibm-generative-ai-engineering" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Enroll on Coursera (~$39/mo)
+        </a>
+        <a class="link-btn" href="https://www.ibm.com/training/certification" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          IBM official cert page
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tips -->
+  <div class="tip" style="margin-top:28px;">
+    <strong>Total cost estimate:</strong> ~$541 &nbsp;·&nbsp; Google $49 + GitHub $99 + AWS $100 + CCA-F $99 + IBM ~$234<br>
+    <strong>Realistic timeline:</strong> First 4 certs done in 3 months · IBM likely extends to month 4 (normal)<br>
+    <strong>Study tip:</strong> Take notes throughout each phase → spend the final week on practice exams → pass → move to the next phase
+  </div>
+
+</main>
+
+<footer>
+  <a href="../" style="color:#b4b2a9;text-decoration:none;">← Back to Yongli hub</a> &nbsp;·&nbsp; Last updated June 2026
+</footer>
+
+</body>
+</html>

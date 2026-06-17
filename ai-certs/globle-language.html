@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>当代码遇见哲学：全球语言全景报告 2025</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+        .citation { color: #007bff; text-decoration: none; }
+        .citation:hover { text-decoration: underline; }
+        .chart-container { height: 400px; }
+        .section-divider { border-top: 2px solid #e5e7eb; margin: 2rem 0; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-6">
+            <h1 class="text-4xl font-bold text-center text-blue-700">当代码遇见哲学：全球语言全景报告 2025</h1>
+            <p class="text-center text-gray-600 mt-2">一份关于编程语言、形式语言与哲学思辨的趣味数据报告</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        
+        <section id="executive-summary" class="bg-white p-6 rounded-lg shadow-lg mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-blue-600">核心发现</h2>
+            <div class="grid md:grid-cols-3 gap-4 text-center">
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <p class="text-3xl font-bold text-blue-700">8000+</p>
+                    <p class="text-gray-600">全球编程语言总数</p>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg">
+                    <p class="text-3xl font-bold text-green-700">7000</p>
+                    <p class="text-gray-600">全球自然语言总数</p>
+                </div>
+                <div class="bg-purple-50 p-4 rounded-lg">
+                    <p class="text-3xl font-bold text-purple-700">2500</p>
+                    <p class="text-gray-600">活跃编程语言</p>
+                </div>
+            </div>
+            <p class="mt-4 text-lg text-gray-700">一个惊人的事实是，人类创造的编程语言数量已经超越了自然语言，这不仅是技术的胜利，也引发了哲学层面的深刻思考：<strong>我们是否在构建一个比自然世界更复杂的符号宇宙？</strong><cite><a href="https://www.cnblogs.com/skysailstar/p/archive/2025/10/22" class="citation" target="_blank">[1]</a></cite></p>
+        </section>
+
+        <section id="programming-languages" class="bg-white p-6 rounded-lg shadow-lg mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-blue-600">全球编程语言生态</h2>
+            <p class="mb-4 text-gray-700">根据2025年最新统计，全球编程语言总数已超过8000种，这一数字是自然语言总数的1.14倍。这些语言构成了一个庞大而复杂的生态系统，支撑着从太空探索到日常应用的一切数字活动。<cite><a href="https://joyagent-code-interpreter.jd.com/download/session-1762004363485-9946/全球编程语言总数统计2025年最新数据的搜索结果.md" class="citation" target="_blank">[2]</a></cite></p>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">语言状态分布</h3>
+                    <div id="language-status-chart" class="chart-container"></div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">语言类型占比</h3>
+                    <div id="language-type-chart" class="chart-container"></div>
+                </div>
+            </div>
+
+            <div class="mt-6 overflow-x-auto">
+                <h3 class="text-xl font-semibold mb-2">2025年TIOBE前10名语言</h3>
+                <table class="min-w-full bg-white border border-gray-300">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="py-2 px-4 border-b">排名</th>
+                            <th class="py-2 px-4 border-b">语言</th>
+                            <th class="py-2 px-4 border-b">流行度</th>
+                            <th class="py-2 px-4 border-b">年度变化</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="py-2 px-4 border-b">1</td><td class="py-2 px-4 border-b">Python</td><td class="py-2 px-4 border-b">24.45%</td><td class="py-2 px-4 border-b text-green-600">+1.53%</td></tr>
+                        <tr><td class="py-2 px-4 border-b">2</td><td class="py-2 px-4 border-b">C</td><td class="py-2 px-4 border-b">9.29%</td><td class="py-2 px-4 border-b text-green-600">+0.64%</td></tr>
+                        <tr><td class="py-2 px-4 border-b">3</td><td class="py-2 px-4 border-b">C++</td><td class="py-2 px-4 border-b">8.84%</td><td class="py-2 px-4 border-b text-green-600">+0.04%</td></tr>
+                        <tr><td class="py-2 px-4 border-b">4</td><td class="py-2 px-4 border-b">Java</td><td class="py-2 px-4 border-b">8.35%</td><td class="py-2 px-4 border-b">0%</td></tr>
+                        <tr><td class="py-2 px-4 border-b">5</td><td class="py-2 px-4 border-b">C#</td><td class="py-2 px-4 border-b">6.94%</td><td class="py-2 px-4 border-b text-green-600">+0.56%</td></tr>
+                        <tr><td class="py-2 px-4 border-b">6</td><td class="py-2 px-4 border-b">JavaScript</td><td class="py-2 px-4 border-b">3.41%</td><td class="py-2 px-4 border-b text-green-600">+0.19%</td></tr>
+                        <tr><td class="py-2 px-4 border-b">7</td><td class="py-2 px-4 border-b">Go</td><td class="py-2 px-4 border-b">1.92%</td><td class="py-2 px-4 border-b text-red-600">-0.4%</td></tr>
+                        <tr><td class="py-2 px-4 border-b">8</td><td class="py-2 px-4 border-b">SQL</td><td class="py-2 px-4 border-b">1.77%</td><td class="py-2 px-4 border-b text-red-600">-0.09%</td></tr>
+                        <tr><td class="py-2 px-4 border-b">9</td><td class="py-2 px-4 border-b">Rust</td><td class="py-2 px-4 border-b">1.19%</td><td class="py-2 px-4 border-b text-green-600">+0.18%</td></tr>
+                        <tr><td class="py-2 px-4 border-b">10</td><td class="py-2 px-4 border-b">PHP</td><td class="py-2 px-4 border-b">1.38%</td><td class="py-2 px-4 border-b text-green-600">+0.13%</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="philosophy-languages" class="bg-white p-6 rounded-lg shadow-lg mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-purple-600">哲学视野下的语言家族</h2>
+            <p class="mb-4 text-gray-700">哲学不仅思考语言的本质，也创造和使用特定的语言工具。这些语言构成了哲学研究的精密仪器，帮助我们探索存在、知识和价值的边界。</p>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-purple-50 p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold text-purple-700 mb-2">形式语言 (Formal Languages)</h3>
+                    <p class="text-sm text-gray-600">由精确语法和语义规则定义的人工语言，用于数学、逻辑和计算机科学。例如：一阶谓词逻辑、模态逻辑语言。</p>
+                </div>
+                <div class="bg-indigo-50 p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold text-indigo-700 mb-2">逻辑语言 (Logical Languages)</h3>
+                    <p class="text-sm text-gray-600">用于表达推理和论证的结构，如命题逻辑、谓词逻辑、时态逻辑等。它们是哲学论证的“数学化”工具。</p>
+                </div>
+                <div class="bg-pink-50 p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold text-pink-700 mb-2">表达语言 (Expressive Languages)</h3>
+                    <p class="text-sm text-gray-600">用于描述和分析自然语言中的意义、指称和言语行为，如真值条件语义学使用的元语言。</p>
+                </div>
+            </div>
+
+            <div class="mt-6">
+                <h3 class="text-xl font-semibold mb-2">哲学语言的数量级</h3>
+                <p class="text-gray-700">虽然难以精确统计，但哲学研究中使用的形式语言和逻辑语言家族至少有数百种。从亚里士多德的三段论到现代模态逻辑，每一种都是对思维可能性的探索。<cite><a href="https://www.docin.com/p-4664318542.html" class="citation" target="_blank">[3]</a></cite> 这些语言的共同特点是追求无歧义性和可验证性，这与自然语言的模糊性和语境依赖性形成鲜明对比。</p>
+            </div>
+        </section>
+
+        <section id="intersection" class="bg-white p-6 rounded-lg shadow-lg mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-green-600">交叉点：当哲学遇见统计</h2>
+            <p class="mb-4 text-gray-700">哲学与语言统计的交汇并非偶然。分析哲学传统中的“语言转向”使得对语言使用的精确描述成为核心议题，而统计学提供了实现这一目标的工具。</p>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">哲学对语言统计的影响</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li><strong>真值条件语义学：</strong> 将陈述的意义与其真值条件相关联，为语料库分析提供了理论基础。</li>
+                        <li><strong>言语行为理论：</strong> 区分语言的“言内行为”和“言外行为”，影响了对话系统的统计建模。</li>
+                        <li><strong>语境依赖性研究：</strong> 推动了动态语义学和概率语义学的发展。</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">统计方法在哲学中的应用</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li><strong>实验哲学：</strong> 使用统计调查验证哲学直觉的普遍性。</li>
+                        <li><strong>语料库哲学：</strong> 通过大规模文本分析研究概念的历史演变。</li>
+                        <li><strong>形式认识论：</strong> 使用概率模型分析信念和证据的关系。</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="mt-4 text-gray-700">例如，在分析“知道”一词的日常使用时，哲学家不再仅仅依赖内省，而是会分析包含该词的数百万条语料，用统计方法揭示其使用模式。<cite><a href="https://m.renrendoc.com/paper/398882243.html" class="citation" target="_blank">[4]</a></cite></p>
+        </section>
+
+        <section id="comparison" class="bg-white p-6 rounded-lg shadow-lg mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-red-600">趣味对比：编程语言 vs 自然语言</h2>
+            <p class="mb-4 text-gray-700">让我们用一个直观的对比来结束这次探索。下图展示了编程语言与自然语言在数量、增长率和淘汰率上的有趣差异。</p>
+            <div id="comparison-chart" class="chart-container"></div>
+            <div class="mt-4 grid md:grid-cols-2 gap-4">
+                <div class="bg-red-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-red-700">编程语言</h4>
+                    <ul class="text-sm text-gray-600 list-disc list-inside">
+                        <li>总数：8000+ 且持续增长</li>
+                        <li>年新增：约300种</li>
+                        <li>淘汰率：约150种/年</li>
+                        <li>增长动力：AI、新技术需求</li>
+                    </ul>
+                </div>
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-blue-700">自然语言</h4>
+                    <ul class="text-sm text-gray-600 list-disc list-inside">
+                        <li>总数：约7000种且缓慢减少</li>
+                        <li>年消亡：约25种</li>
+                        <li>主要威胁：全球化、文化同化</li>
+                        <li>保护努力：联合国教科文组织等</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="mt-4 text-center text-lg text-gray-700">结论：<strong>人类创造的技术语言正在以超越自然语言演化的速度膨胀，这不仅是技术发展的标志，也反映了我们对精确、可控交流的永恒追求。</strong></p>
+        </section>
+
+        <section id="future" class="bg-white p-6 rounded-lg shadow-lg mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-indigo-600">未来展望：语言的融合与演化</h2>
+            <p class="text-gray-700">展望未来，编程语言与哲学语言的界限可能会进一步模糊。AI辅助编程工具（如GitHub Copilot）正在使代码更接近自然语言描述，而哲学对语言清晰性的追求也在影响编程语言的设计。</p>
+            <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
+                <li>自然语言编程（NLP）的成熟可能使编程语言与自然语言的差异缩小。</li>
+                <li>形式化验证技术的进步将使哲学逻辑直接应用于软件可靠性证明。</li>
+                <li>多语言协作开发将成为常态，哲学中的“语言游戏”概念将获得新的技术内涵。</li>
+            </ul>
+            <p class="mt-4 text-gray-700">正如维特根斯坦所言：“语言的界限就是世界的界限。”在数字时代，这句话或许可以改写为：<strong>“编程语言的界限，就是我们创造世界的能力的界限。”</strong></p>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-2">Created by JoyAgent</p>
+            <p class="text-sm text-gray-400">页面内容均由 AI 生成，仅供参考</p>
+            <p class="text-xs text-gray-500 mt-2">数据来源：TIOBE指数、Stack Overflow开发者调查、哲学与语言学交叉研究文献</p>
+        </div>
+    </footer>
+
+    <script>
+        // Chart 1: Language Status Distribution
+        const statusChart = echarts.init(document.getElementById('language-status-chart'));
+        const statusOption = {
+            title: { text: '编程语言状态分布', left: 'center' },
+            tooltip: { trigger: 'item' },
+            legend: { orient: 'vertical', left: 'left' },
+            series: [{
+                name: '语言数量',
+                type: 'pie',
+                radius: '50%',
+                data: [
+                    { value: 2500, name: '活跃语言' },
+                    { value: 5500, name: '历史语言' },
+                ],
+                emphasis: {
+                    itemStyle: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }]
+        };
+        statusChart.setOption(statusOption);
+
+        // Chart 2: Language Type Distribution
+        const typeChart = echarts.init(document.getElementById('language-type-chart'));
+        const typeOption = {
+            title: { text: '语言类型占比', left: 'center' },
+            tooltip: { trigger: 'item' },
+            legend: { orient: 'vertical', left: 'left' },
+            series: [{
+                name: '占比',
+                type: 'pie',
+                radius: '50%',
+                data: [
+                    { value: 35, name: '通用编程语言' },
+                    { value: 28, name: '领域特定语言' },
+                    { value: 15, name: '教学用语言' },
+                    { value: 12, name: '实验性语言' },
+                    { value: 10, name: '历史遗产语言' },
+                ],
+                emphasis: {
+                    itemStyle: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }]
+        };
+        typeChart.setOption(typeOption);
+
+        // Chart 3: Comparison Chart
+        const comparisonChart = echarts.init(document.getElementById('comparison-chart'));
+        const comparisonOption = {
+            title: { text: '编程语言 vs 自然语言：数量与趋势', left: 'center' },
+            tooltip: { trigger: 'axis' },
+            legend: { data: ['编程语言', '自然语言'], top: 30 },
+            xAxis: { type: 'category', data: ['总数', '年新增', '年消亡'] },
+            yAxis: { type: 'value' },
+            series: [
+                {
+                    name: '编程语言',
+                    type: 'bar',
+                    data: [8000, 300, 150],
+                    itemStyle: { color: '#4f46e5' }
+                },
+                {
+                    name: '自然语言',
+                    type: 'bar',
+                    data: [7000, 0, 25],
+                    itemStyle: { color: '#059669' }
+                }
+            ]
+        };
+        comparisonChart.setOption(comparisonOption);
+
+        // Responsive charts
+        window.addEventListener('resize', function() {
+            statusChart.resize();
+            typeChart.resize();
+            comparisonChart.resize();
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yongli — Research Hub</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: #f6f5f0;
+      color: #1a1a18;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 56px 40px 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    header h1 {
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: -0.3px;
+    }
+
+    header p {
+      margin-top: 8px;
+      font-size: 15px;
+      color: #888780;
+      line-height: 1.6;
+    }
+
+    .divider {
+      max-width: 900px;
+      margin: 0 auto;
+      border: none;
+      border-top: 0.5px solid #d3d1c7;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 36px 40px 80px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #888780;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      background: #fff;
+      border: 0.5px solid #d3d1c7;
+      border-radius: 12px;
+      padding: 22px 24px;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .card:hover {
+      border-color: #888780;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .card-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      margin-bottom: 14px;
+    }
+
+    .card h2 {
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    .card p {
+      font-size: 13px;
+      color: #5f5e5a;
+      line-height: 1.5;
+    }
+
+    .card .meta {
+      margin-top: 14px;
+      font-size: 11px;
+      color: #b4b2a9;
+    }
+
+    .add-card {
+      background: transparent;
+      border: 0.5px dashed #c0beB6;
+      border-radius: 12px;
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: #888780;
+      font-size: 13px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px;
+      font-size: 12px;
+      color: #b4b2a9;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Yongli</h1>
+  <p>A personal research hub — organized learning plans, references, and notes.</p>
+</header>
+<hr class="divider">
+
+<main>
+  <p class="section-label">Research Categories</p>
+
+  <div class="grid">
+
+    <a class="card" href="./learning-plan.html">
+      <div class="card-icon" style="background:#EAF3DE;">📜</div>
+      <h2>AI Certificates</h2>
+      <p>12-week learning plan covering 5 AI certifications — Google, GitHub, AWS, Claude, IBM.</p>
+      <p class="meta">Last updated · June 2026</p>
+    </a>
+
+    <div class="add-card">
+      <span style="font-size:18px;">+</span>
+      More categories coming soon
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  github.com/wkdays/yongli
+</footer>
+
+</body>
+</html>

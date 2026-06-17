@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI·数据科学 2026 书单</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: #0f1117;
+      color: #e2e8f0;
+      min-height: 100vh;
+    }
+    header {
+      background: linear-gradient(135deg, #1a1f36 0%, #0f1117 100%);
+      border-bottom: 1px solid #2d3748;
+      padding: 48px 24px 36px;
+      text-align: center;
+    }
+    header .tag {
+      display: inline-block;
+      background: #3b82f6;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    header h1 {
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 800;
+      background: linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+    }
+    header p { color: #94a3b8; font-size: 15px; }
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 28px;
+    }
+    .stat { text-align: center; }
+    .stat .num { font-size: 28px; font-weight: 800; color: #60a5fa; }
+    .stat .label { font-size: 12px; color: #64748b; margin-top: 2px; }
+    .search-bar {
+      max-width: 520px;
+      margin: 32px auto 0;
+      position: relative;
+    }
+    .search-bar input {
+      width: 100%;
+      background: #1e2433;
+      border: 1px solid #2d3748;
+      border-radius: 12px;
+      padding: 12px 16px 12px 44px;
+      font-size: 14px;
+      color: #e2e8f0;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-bar input:focus { border-color: #3b82f6; }
+    .search-bar input::placeholder { color: #4a5568; }
+    .search-bar svg {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #4a5568;
+    }
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+    .book-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .book-item {
+      background: #1a1f2e;
+      border: 1px solid #2d3748;
+      border-radius: 12px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .book-item:hover {
+      border-color: #3b82f6;
+      transform: translateX(4px);
+    }
+    .book-num {
+      font-size: 13px;
+      font-weight: 700;
+      color: #3b4a6b;
+      min-width: 28px;
+      text-align: right;
+    }
+    .book-info { flex: 1; min-width: 0; }
+    .book-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #e2e8f0;
+      line-height: 1.5;
+      word-break: break-all;
+    }
+    .book-author {
+      margin-top: 6px;
+      font-size: 13px;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .book-author svg { flex-shrink: 0; }
+    .no-results {
+      text-align: center;
+      color: #4a5568;
+      padding: 60px 0;
+      font-size: 15px;
+      display: none;
+    }
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: #2d3748;
+      font-size: 12px;
+      border-top: 1px solid #1a1f2e;
+    }
+    footer a { color: #3b4a6b; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="tag">书单</div>
+  <h1>AI · 数据科学 2026</h1>
+  <p>来源：Z-Library 公开书单</p>
+  <div class="stats">
+    <div class="stat">
+      <div class="num" id="total-count">40</div>
+      <div class="label">收录书目</div>
+    </div>
+  </div>
+  <div class="search-bar">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+    </svg>
+    <input type="text" id="search" placeholder="搜索书名或作者…" oninput="filterBooks()">
+  </div>
+</header>
+
+<main>
+  <div class="book-list" id="book-list"></div>
+  <div class="no-results" id="no-results">没有找到匹配的书目</div>
+</main>
+
+<footer>
+  书单来源：<a href="https://zh.z-library.mn/booklist/3345338/c60820/ai%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A62026.html" target="_blank">Z-Library · AI数据科学2026</a>
+  &nbsp;·&nbsp; 收录于 2026-06-17
+</footer>
+
+<script>
+const books = [
+  { title: "2026多模态大语言模型技术发展报告", author: "中科算网算泥社区" },
+  { title: "2025年中国人工智能学会系列白皮书——语言智能", author: "中国人工智能学会" },
+  { title: "2021智源大会观点报告", author: "it-ebooks" },
+  { title: "追问洞察-10月刊", author: "范存源, 王茉" },
+  { title: "极简AI入门：一本书读懂人工智能思维与应用", author: "黄永健; 韩宜飞" },
+  { title: "智能与数据重构世界", author: "薄智泉" },
+  { title: "新基建下人工智能的未来", author: "刁生富; 刁宏宇; 彭钰舒" },
+  { title: "泛智能革命：从人工智能到元宇宙的关键革新", author: "陈根" },
+  { title: "智能世界2035", author: "华为技术有限公司" },
+  { title: "再造：数字化与数字化转型", author: "秦永彬, 黄瑞章, 陈艳平, 林川" },
+  { title: "AI智能体驱动产业变革研究报告", author: "数字产业研发中心" },
+  { title: "中国AI Agent行业研究报告（二）", author: "甲子光年 / 努尔麦麦提·买合木提" },
+  { title: "中国AI Agent行业研究报告（一）大模型时代的"APP"", author: "张一甲, 刘瑶, 胡博文" },
+  { title: "高质量数据集", author: "—" },
+  { title: "大模型一体机应用研究报告（2025年）", author: "中国信息通信研究院人工智能研究所" },
+  { title: "人工智能产业发展研究报告（2025年）", author: "中国信息通信研究院" },
+  { title: "云计算白皮书2025", author: "信通院" },
+  { title: "写给程序员的数据挖掘实践指南", author: "[美] Ron Zacharski" },
+  { title: "《DeepSeek入门宝典》第1册：技术解析篇", author: "51CTO" },
+  { title: "《DeepSeek入门宝典》第2册：开发实战篇", author: "51CTO" },
+  { title: "AI赋能：企业智能化应用实践", author: "田野; 张建伟" },
+  { title: "DeepSeek全场景指南", author: "程希冀" },
+  { title: "超智能体（YJango）", author: "it-ebooks" },
+  { title: ""AI+"职业趋势报告", author: "阿里巴巴 Alibaba" },
+  { title: "DeepSeek入门宝典·行业应用篇", author: "51CTO" },
+  { title: "DeepSeek入门宝典·个人使用篇", author: "51CTO" },
+  { title: "程序员的AI书：从代码开始", author: "张力柯, 潘晖" },
+  { title: "AI高效办公一本通", author: "郭子璇" },
+  { title: "深度学习应用开发：TensorFlow实践", author: "吴明晖" },
+  { title: "码农·解锁机器学习（第30期）", author: "图灵社区" },
+  { title: "自然语言处理导论", author: "沈颖" },
+  { title: "基于子空间的人脸识别", author: "章毓晋" },
+  { title: "自然语言处理综论（第2版）", author: "[美] Daniel Jurafsky, James H. Martin；冯志伟, 孙乐 译" },
+  { title: "深度学习理论与实战·基础篇", author: "李理" },
+  { title: "光学信号处理、计算和神经网络", author: "[美] 杨振寰, 陈树源；母国光 等译" },
+  { title: "人工智能革命：历史、当下与未来", author: "王天一" },
+  { title: "多模态图像配准", author: "上官晋太" },
+  { title: "图像超分辨率重建方法及应用", author: "石爱业, 徐枫, 徐梦溪" },
+  { title: "视觉SLAM十四讲：从理论到实践（第2版）", author: "高翔, 张涛" },
+  { title: "计算机视觉：一种现代方法", author: "[美] David A. Forsyth, Jean Ponce；林学訚, 王宏 译" },
+];
+
+const listEl = document.getElementById('book-list');
+const noResults = document.getElementById('no-results');
+
+function render(data) {
+  listEl.innerHTML = data.map((b, i) => `
+    <div class="book-item">
+      <span class="book-num">${String(i + 1).padStart(2, '0')}</span>
+      <div class="book-info">
+        <div class="book-title">${b.title}</div>
+        <div class="book-author">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          ${b.author}
+        </div>
+      </div>
+    </div>
+  `).join('');
+  noResults.style.display = data.length === 0 ? 'block' : 'none';
+}
+
+function filterBooks() {
+  const q = document.getElementById('search').value.trim().toLowerCase();
+  const filtered = q ? books.filter(b =>
+    b.title.toLowerCase().includes(q) || b.author.toLowerCase().includes(q)
+  ) : books;
+  render(filtered);
+  document.getElementById('total-count').textContent = filtered.length;
+}
+
+render(books);
+</script>
+</body>
+</html>

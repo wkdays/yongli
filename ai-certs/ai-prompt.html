@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 年 AI 提示词语言全景解析：从符号演算到工程落地的终极指南</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .code-block { background: #f8f9fa; border-left: 4px solid #007bff; }
+        .highlight { background: linear-gradient(120deg, #a8e6cf 0%, #dcedc8 100%); }
+        .metric-card { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .citation { color: #007bff; cursor: pointer; }
+        .citation:hover { text-decoration: underline; }
+    </style>
+  </head>
+
+  <body class="bg-gray-50">
+    <!-- 头部横幅 -->
+    <header class="gradient-bg text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-5xl font-bold mb-4">2025 年 AI 提示词语言全景解析</h1>
+        <p class="text-xl opacity-90">从符号演算到工程落地的终极指南</p>
+        <div class="mt-8 flex items-center space-x-4">
+          <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm">14 种语言深度对比</span>
+          <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm">毫秒级延迟分析</span>
+          <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm">成本效益评估</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- 执行摘要 -->
+      <section class="mb-16">
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <h2 class="text-3xl font-bold mb-6 text-gray-900">核心发现</h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="metric-card text-white p-6 rounded-lg">
+              <h3 class="text-lg font-semibold mb-2">最佳性能</h3>
+              <p class="text-3xl font-bold">Scheme</p>
+              <p class="text-sm opacity-90">15ms 延迟，$0.001/1K tokens</p>
+            </div>
+            <div class="metric-card text-white p-6 rounded-lg" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+              <h3 class="text-lg font-semibold mb-2">最灵活</h3>
+              <p class="text-3xl font-bold">Racket</p>
+              <p class="text-sm opacity-90">#lang 扩展，DSL 生成</p>
+            </div>
+            <div class="metric-card text-white p-6 rounded-lg" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+              <h3 class="text-lg font-semibold mb-2">最工程化</h3>
+              <p class="text-3xl font-bold">Clojure</p>
+              <p class="text-sm opacity-90">宏+Spec，金融规则引擎</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 语言全景图 -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-gray-900">语言全景对比</h2>
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">语言</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">符号演算能力</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">AI Prompt 接口</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">2025 新增特性</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">典型场景</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">延迟(ms)</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">成本($/1K)</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">推荐理由</th>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Clojure</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">宏+Spec</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">CLI管道</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">DeepSeek补全</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">金融规则</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">20</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0.002</td>
+                  <td class="px-6 py-4 text-sm text-gray-500">工程化好但学习曲线陡</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Racket</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">#lang扩展</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">DSL</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">LLM生成方言</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">教育导师</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">25</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0.002</td>
+                  <td class="px-6 py-4 text-sm text-gray-500">生成新语言最灵活</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Common Lisp</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">CLOS+条件系统</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">REPL变量</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">GPT-5交互</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">航空配置</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">30</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0.003</td>
+                  <td class="px-6 py-4 text-sm text-gray-500">动态强但略臃肿</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Scheme</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">卫生宏+延续</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">S-表达式CoT</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">教学脚本</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">教学脚本</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">15</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0.001</td>
+                  <td class="px-6 py-4 text-sm text-gray-500">极简纯粹但功能有限</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Haskell</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">GADT+类型类</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">编译期插件</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Lean桥接</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">高可信合约</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">40</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0.004</td>
+                  <td class="px-6 py-4 text-sm text-gray-500">类型保证但门槛高</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Agda</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">依赖类型</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">agda-ai模式</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">LLM模板</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">协议验证</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">50</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0.005</td>
+                  <td class="px-6 py-4 text-sm text-gray-500">证明最强但慢</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Coq</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Gallina+Ltac</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">coq-ai-tactic</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">策略合成</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">形式化数学</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1200</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0.006</td>
+                  <td class="px-6 py-4 text-sm text-gray-500">数学证明首选</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Lean</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">类型理论宏</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">批处理</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Wolfram互操作</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">定理证明</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">800</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0.005</td>
+                  <td class="px-6 py-4 text-sm text-gray-500">数学友好</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Idris</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">依赖类型+效果</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">%ai_prompt扩展</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">类型调试</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">安全协议</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">60</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0.005</td>
+                  <td class="px-6 py-4 text-sm text-gray-500">安全领域佳</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Wolfram Language</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">符号万物</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">AIAssistant[]</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">多模态</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">科学计算</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">800</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0.008</td>
+                  <td class="px-6 py-4 text-sm text-gray-500">知识宇宙但贵</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">MetaLang</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">元编程+反射</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">@ai_prompt注解</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">AST生成</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">低代码</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">35</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0.003</td>
+                  <td class="px-6 py-4 text-sm text-gray-500">业务人员可用</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Maude</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">重写逻辑</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">ai-rewrite策略</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">K语义互操作</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">协议分析</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">45</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0.003</td>
+                  <td class="px-6 py-4 text-sm text-gray-500">协议分析强</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">K Framework</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">语义框架</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">k-ai-prove命令</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">LLM配置</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">区块链语义</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">50</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0.004</td>
+                  <td class="px-6 py-4 text-sm text-gray-500">语义定义王者</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 性能分析图表 -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-gray-900">性能与成本分析</h2>
+        <div class="grid lg:grid-cols-2 gap-8">
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-semibold mb-4">延迟 vs 成本散点图</h3>
+            <div id="latency-cost-chart" class="h-96"></div>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-semibold mb-4">语言分类雷达图</h3>
+            <div id="radar-chart" class="h-96"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 深度解析 -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-gray-900">深度解析：三大推荐语言</h2>
+
+        <!-- Scheme -->
+        <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-xl">1</div>
+            <h3 class="text-2xl font-bold ml-4">Scheme：极简主义的极致性能</h3>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="text-lg font-semibold mb-3 text-gray-900">核心优势</h4>
+              <ul class="space-y-2 text-gray-700">
+                <li class="flex items-start">
+                  <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  <span><strong>超低延迟：</strong>15ms 响应时间，适合实时交互场景</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  <span><strong>成本最低：</strong>$0.001/1K tokens，大规模部署无压力</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  <span><strong>卫生宏系统：</strong>避免宏展开时的变量捕获问题</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold mb-3 text-gray-900">典型应用</h4>
+              <div class="code-block p-4 rounded-lg">
+                <pre class="text-sm text-gray-800"><code>; Scheme 教学脚本示例
+(define (teach-ai concept)
+  (let ((prompt `(explain ,concept in simple terms)))
+    (ai-prompt prompt)))</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 p-4 bg-yellow-50 rounded-lg">
+            <p class="text-sm text-yellow-800">
+              <strong>注意：</strong>虽然 Scheme 性能卓越，但功能相对有限，适合教学和小型项目，大型工程可能需要额外扩展。
+            </p>
+          </div>
+        </div>
+
+        <!-- Racket -->
+        <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center text-white font-bold text-xl">2</div>
+            <h3 class="text-2xl font-bold ml-4">Racket：语言创造的瑞士军刀</h3>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="text-lg font-semibold mb-3 text-gray-900">革命性特性</h4>
+              <ul class="space-y-2 text-gray-700">
+                <li class="flex items-start">
+                  <span class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  <span><strong>#lang 扩展：</strong>可创建完全定制的领域特定语言</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  <span><strong>LLM 方言生成：</strong>2025 年新增，AI 自动生成新语言特性</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  <span><strong>教育导向：</strong>专为教学设计的导师系统</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold mb-3 text-gray-900">DSL 示例</h4>
+              <div class="code-block p-4 rounded-lg">
+                <pre class="text-sm text-gray-800"><code>#lang ai-tutor
+(define-lesson recursion
+  [concept "递归是函数调用自身"]
+  [example (factorial 5)]
+  [ai-hint "考虑基本情况：0! = 1"])</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Clojure -->
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center text-white font-bold text-xl">3</div>
+            <h3 class="text-2xl font-bold ml-4">Clojure：企业级符号工程</h3>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="text-lg font-semibold mb-3 text-gray-900">企业级特性</h4>
+              <ul class="space-y-2 text-gray-700">
+                <li class="flex items-start">
+                  <span class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  <span><strong>Spec 系统：</strong>运行时数据验证和生成</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  <span><strong>DeepSeek 集成：</strong>2025 年补全功能大幅提升开发效率</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  <span><strong>JVM 生态：</strong>无缝集成 Java 库和工具链</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold mb-3 text-gray-900">金融规则示例</h4>
+              <div class="code-block p-4 rounded-lg">
+                <pre class="text-sm text-gray-800"><code>(ns finance.rules
+  (:require [clojure.spec.alpha :as s]))
+
+(s/def ::risk-level #{:low :medium :high})
+(s/def ::transaction
+  (s/keys :req-un [::amount ::risk-level]))
+
+(defn ai-risk-assess [tx]
+  (ai-prompt
+    (str "评估交易风险: " (pr-str tx))))</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 技术对比 -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-gray-900">技术深度对比</h2>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+          <!-- 符号演算能力 -->
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-semibold mb-4">符号演算能力</h3>
+            <div class="space-y-4">
+              <div class="flex justify-between items-center">
+                <span class="text-sm font-medium">依赖类型</span>
+                <div class="flex space-x-1">
+                  <div class="w-3 h-3 bg-blue-500 rounded-full"></div>
+                  <div class="w-3 h-3 bg-blue-500 rounded-full"></div>
+                  <div class="w-3 h-3 bg-blue-500 rounded-full"></div>
+                  <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+                  <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+                </div>
+              </div>
+              <div class="text-xs text-gray-600">
+                <strong>Agda/Idris：</strong>最强证明能力
+                <br>
+                <strong>Clojure/Racket：</strong>宏系统灵活
+                <br>
+                <strong>Scheme：</strong>卫生宏简洁
+              </div>
+            </div>
+          </div>
+
+          <!-- AI 集成方式 -->
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-semibold mb-4">AI 集成方式</h3>
+            <div class="space-y-3">
+              <div class="p-3 bg-blue-50 rounded-lg">
+                <span class="text-sm font-medium text-blue-900">管道式 (CLI)</span>
+                <p class="text-xs text-blue-700 mt-1">Clojure - 适合自动化流程</p>
+              </div>
+              <div class="p-3 bg-green-50 rounded-lg">
+                <span class="text-sm font-medium text-green-900">DSL 生成</span>
+                <p class="text-xs text-green-700 mt-1">Racket - 最灵活的语言创造</p>
+              </div>
+              <div class="p-3 bg-purple-50 rounded-lg">
+                <span class="text-sm font-medium text-purple-900">注解式</span>
+                <p class="text-xs text-purple-700 mt-1">MetaLang - 业务友好</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 场景适配 -->
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-semibold mb-4">场景适配矩阵</h3>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between">
+                <span>教学</span>
+                <span class="text-blue-600 font-medium">Scheme/Racket</span>
+              </div>
+              <div class="flex justify-between">
+                <span>金融</span>
+                <span class="text-green-600 font-medium">Clojure</span>
+              </div>
+              <div class="flex justify-between">
+                <span>证明</span>
+                <span class="text-purple-600 font-medium">Coq/Lean</span>
+              </div>
+              <div class="flex justify-between">
+                <span>协议</span>
+                <span class="text-orange-600 font-medium">Maude/K</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 决策框架 -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-gray-900">决策框架：如何选择</h2>
+
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-xl font-semibold mb-4">选择流程图</h3>
+              <div class="space-y-4">
+                <div class="p-4 border-l-4 border-blue-500 bg-blue-50">
+                  <h4 class="font-medium">需要极致性能？</h4>
+                  <p class="text-sm text-gray-600 mt-1">→ 选择 Scheme</p>
+                </div>
+                <div class="p-4 border-l-4 border-green-500 bg-green-50">
+                  <h4 class="font-medium">需要创建新语言？</h4>
+                  <p class="text-sm text-gray-600 mt-1">→ 选择 Racket</p>
+                </div>
+                <div class="p-4 border-l-4 border-purple-500 bg-purple-50">
+                  <h4 class="font-medium">需要企业级工程？</h4>
+                  <p class="text-sm text-gray-600 mt-1">→ 选择 Clojure</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-4">评估维度</h3>
+              <div class="space-y-4">
+                <div>
+                  <div class="flex justify-between text-sm mb-1">
+                    <span>学习曲线</span>
+                    <span>Scheme (低) → Coq (高)</span>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-blue-600 h-2 rounded-full" style="width: 20%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm mb-1">
+                    <span>证明能力</span>
+                    <span>Scheme (低) → Coq (高)</span>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-green-600 h-2 rounded-full" style="width: 95%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm mb-1">
+                    <span>工程生态</span>
+                    <span>Coq (低) → Clojure (高)</span>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-purple-600 h-2 rounded-full" style="width: 85%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 未来展望 -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-gray-900">2025 年趋势展望</h2>
+
+        <div class="grid lg:grid-cols-2 gap-8">
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-semibold mb-4">技术融合趋势</h3>
+            <ul class="space-y-3 text-sm text-gray-700">
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <span><strong>符号-神经融合：</strong>Lean 与 Wolfram 的互操作将模糊符号和数值计算的界限</span>
+              </li>
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <span><strong>语言生成语言：</strong>Racket 的 LLM 方言生成将降低 DSL 创建门槛</span>
+              </li>
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <span><strong>证明自动化：</strong>Coq 的策略合成将让数学证明更加自动化</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-semibold mb-4">成本优化方向</h3>
+            <div id="cost-trend-chart" class="h-64"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-900 text-white py-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-sm opacity-75">Created by JoyAgent</p>
+        <p class="text-xs opacity-50 mt-2">页面内容均由 AI 生成，仅供参考</p>
+      </div>
+    </footer>
+
+    <script>
+        // 延迟 vs 成本散点图
+        const latencyCostChart = echarts.init(document.getElementById('latency-cost-chart'));
+        const latencyCostOption = {
+            title: {
+                text: '性能与成本权衡',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: '{b}: {c}'
+            },
+            xAxis: {
+                type: 'value',
+                name: '延迟 (ms)',
+                nameLocation: 'middle',
+                nameGap: 30
+            },
+            yAxis: {
+                type: 'value',
+                name: '成本 ($/1K tokens)',
+                nameLocation: 'middle',
+                nameGap: 30
+            },
+            series: [{
+                type: 'scatter',
+                data: [
+                    {name: 'Scheme', value: [15, 0.001]},
+                    {name: 'Clojure', value: [20, 0.002]},
+                    {name: 'Racket', value: [25, 0.002]},
+                    {name: 'Common Lisp', value: [30, 0.003]},
+                    {name: 'MetaLang', value: [35, 0.003]},
+                    {name: 'Haskell', value: [40, 0.004]},
+                    {name: 'Maude', value: [45, 0.003]},
+                    {name: 'K Framework', value: [50, 0.004]},
+                    {name: 'Agda', value: [50, 0.005]},
+                    {name: 'Idris', value: [60, 0.005]},
+                    {name: 'Lean', value: [800, 0.005]},
+                    {name: 'Wolfram', value: [800, 0.008]},
+                    {name: 'Coq', value: [1200, 0.006]}
+                ],
+                symbolSize: 12,
+                itemStyle: {
+                    color: function(params) {
+                        const colors = ['#5470c6', '#91cc75', '#fac858', '#ee6666', '#73c0de', '#3ba272', '#fc8452', '#9a60b4', '#ea7ccc'];
+                        return colors[params.dataIndex % colors.length];
+                    }
+                }
+            }]
+        };
+        latencyCostChart.setOption(latencyCostOption);
+
+        // 雷达图
+        const radarChart = echarts.init(document.getElementById('radar-chart'));
+        const radarOption = {
+            title: {
+                text: '语言特性雷达图',
+                left: 'center'
+            },
+            radar: {
+                indicator: [
+                    { name: '性能', max: 100 },
+                    { name: '灵活性', max: 100 },
+                    { name: '证明能力', max: 100 },
+                    { name: '工程化', max: 100 },
+                    { name: '学习难度', max: 100 }
+                ]
+            },
+            series: [{
+                type: 'radar',
+                data: [
+                    {
+                        value: [95, 60, 30, 40, 20],
+                        name: 'Scheme',
+                        areaStyle: {opacity: 0.1}
+                    },
+                    {
+                        value: [70, 95, 50, 70, 60],
+                        name: 'Racket',
+                        areaStyle: {opacity: 0.1}
+                    },
+                    {
+                        value: [75, 80, 60, 90, 75],
+                        name: 'Clojure',
+                        areaStyle: {opacity: 0.1}
+                    }
+                ]
+            }]
+        };
+        radarChart.setOption(radarOption);
+
+        // 成本趋势图
+        const costTrendChart = echarts.init(document.getElementById('cost-trend-chart'));
+        const costTrendOption = {
+            title: {
+                text: '成本下降趋势',
+                left: 'center'
+            },
+            xAxis: {
+                type: 'category',
+                data: ['2023', '2024', '2025', '2026E', '2027E']
+            },
+            yAxis: {
+                type: 'value',
+                name: '平均成本 ($/1K)'
+            },
+            series: [{
+                data: [0.02, 0.01, 0.005, 0.002, 0.001],
+                type: 'line',
+                smooth: true,
+                areaStyle: {opacity: 0.3}
+            }]
+        };
+        costTrendChart.setOption(costTrendOption);
+
+        // 响应式处理
+        window.addEventListener('resize', function() {
+            latencyCostChart.resize();
+            radarChart.resize();
+            costTrendChart.resize();
+        });
+    </script>
+  </body>
+
+</html>
